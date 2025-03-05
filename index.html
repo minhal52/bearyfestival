@@ -9,98 +9,97 @@
 </head>
 <style>
     /* Reset & Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Orbitron', sans-serif;
-    overflow: hidden; /* Prevent scrolling before curtain animation */
-    background-color: black;
-    color: white;
-}
+    body {
+        font-family: 'Orbitron', sans-serif;
+        overflow: hidden; /* Prevent scrolling before curtain animation */
+        background-color: black;
+        color: white;
+    }
 
-/* Starter Text */
-#starter {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    color: #ffcc00;
-    cursor: pointer;
-}
+    /* Starter Text */
+    #starter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        color: #ffcc00;
+        cursor: pointer;
+    }
 
-/* Scene */
-#scene {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    /* Scene */
+    #scene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-/* Curtain */
-#curtain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    z-index: 2;
-}
+    /* Curtain */
+    #curtain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        z-index: 2;
+    }
 
-.left, .right {
-    width: 50%;
-    height: 100%;
-    background-image: url("assets/img/curtain.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 2s ease-in-out;
-}
+    .left, .right {
+        width: 50%;
+        height: 100%;
+        background-image: url("assets/img/curtain.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: transform 2s ease-in-out;
+    }
 
-.left {
-    transform-origin: center right;
-}
+    .left {
+        transform-origin: center right;
+    }
 
-.right {
-    transform-origin: center left;
-}
+    .right {
+        transform-origin: center left;
+    }
 
-/* Curtain Open Animation */
-#curtain.open .left {
-    transform: translateX(-100%) scale(0, 2);
-}
+    /* Curtain Open Animation */
+    #curtain.open .left {
+        transform: translateX(-100%) scale(0, 2);
+    }
 
-#curtain.open .right {
-    transform: translateX(100%) scale(0, 2);
-}
+    #curtain.open .right {
+        transform: translateX(100%) scale(0, 2);
+    }
 
-/* Scene Expansion */
-#scene.expand {
-    background-color: rgb(32, 32, 32);
-    transition: background-color 2s ease-in-out;
-}
+    /* Scene Expansion */
+    #scene.expand {
+        background-color: rgb(32, 32, 32);
+        transition: background-color 2s ease-in-out;
+    }
 
-/* Fade Out Effect for Starter Text */
-#starter.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
+    /* Fade Out Effect for Starter Text */
+    #starter.fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
 </style>
 <body>
 
-    <div id="starter">Press Enter</div>
+    <div id="starter">Press Enter or Tap</div>
 
     <div id="scene">
         <div id="curtain">
@@ -114,6 +113,10 @@ body {
             if (event.key === "Enter") {
                 showTime();
             }
+        });
+
+        document.addEventListener('touchstart', function() {
+            showTime();
         });
 
         function showTime() {
