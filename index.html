@@ -109,17 +109,12 @@
     </div>
 
     <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Enter") {
-                showTime();
-            }
-        });
-
-        document.addEventListener('touchstart', function() {
-            showTime();
-        });
+        let hasOpened = false; // Prevent multiple triggers
 
         function showTime() {
+            if (hasOpened) return; // Prevent double execution
+            hasOpened = true;
+
             document.getElementById("curtain").classList.add("open"); 
             document.getElementById("scene").classList.add("expand");
             document.getElementById("starter").classList.add("fade-out");
@@ -133,6 +128,18 @@
                 window.location.href = "new.html"; // Change to your actual homepage file
             }, 2500);
         }
+
+        // Listen for Enter key on large screens
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                showTime();
+            }
+        });
+
+        // Listen for touch anywhere on the screen
+        document.addEventListener('touchstart', function() {
+            showTime();
+        }, { once: true }); // Ensures it only triggers once
     </script>
 
 </body>
