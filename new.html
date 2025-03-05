@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnataka Beary Festival 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<style>
+ /* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transform: scale(1.1);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+/* Background Video */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Hero Title */
+.hero h1 {
+    font-size: 5vw;
+    font-weight: 800;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+    color: #ffcc00;
+}
+
+/* Hero Subtitle */
+.hero p {
+    font-size: 2vw;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Small Text Below Subtitle */
+.hero .small-text {
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: #ddd;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Show Hero */
+.hero.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Festival Programmes Section */
+.festival-programmes {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    color: black;
+}
+
+.festival-programmes h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+/* Programmes Grid */
+.programmes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.programme {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    color: black;
+}
+
+.programme:hover {
+    transform: translateY(-5px);
+    background: #ffcc00;
+    color: black;
+}
+
+.programme i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.programme h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 7vw;
+    }
+    .hero p {
+        font-size: 3vw;
+    }
+    .hero .small-text {
+        font-size: 2vw;
+    }
+    .festival-programmes h2 {
+        font-size: 2em;
+    }
+    .programmes-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .festival-programmes h2 {
+        font-size: 1.8em;
+    }
+    .programmes-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Karnataka Beary Festival 2025</h1>
+        <p>Experience the culture, heritage, and joy of the Beary community</p>
+        <p class="small-text">By Mangalore.Story</p>
+    </div>
+
+    <!-- Festival Programmes Section -->
+    <section class="festival-programmes">
+        <h2>Festival Highlights & Programs</h2>
+        <div class="programmes-container">
+            
+            <!-- Cultural & Talent -->
+            <div class="programme">
+                <i class="fas fa-theater-masks"></i>
+                <h3>Cultural Activities</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Talent Show</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Mehandi Competition</h3>
+            </div>
+
+            <!-- Awards & Recognition -->
+            <div class="programme">
+                <i class="fas fa-award"></i>
+                <h3>Achievers Recognition</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-trophy"></i>
+                <h3>Business Award</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-medal"></i>
+                <h3>Youth Motivation Award</h3>
+            </div>
+
+            <!-- Food & Fun -->
+            <div class="programme">
+                <i class="fas fa-utensils"></i>
+                <h3>Food Festival</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-cookie"></i>
+                <h3>Food Competition</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-glass-cheers"></i>
+                <h3>One Day Gawji Gammath</h3>
+            </div>
+
+            <!-- Sports & Games -->
+            <div class="programme">
+                <i class="fas fa-futbol"></i>
+                <h3>Cricket Match</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-child"></i>
+                <h3>Kids & Old Fun Games</h3>
+            </div>
+
+            <!-- Career & Business -->
+            <div class="programme">
+                <i class="fas fa-briefcase"></i>
+                <h3>Startup Platform</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-user-tie"></i>
+                <h3>Job Mela</h3>
+            </div>
+
+            <!-- Family & Social -->
+            <div class="programme">
+                <i class="fas fa-users"></i>
+                <h3>Family Gathering</h3>
+            </div>
+            <div class="programme">
+                <i class="fas fa-handshake"></i>
+                <h3>Social Award</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to Show Hero Section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.querySelector(".hero").classList.add("show");
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>

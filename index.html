@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<style>
+    /* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden; /* Prevent scrolling before curtain animation */
+    background-color: black;
+    color: white;
+}
+
+/* Starter Text */
+#starter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffcc00;
+    cursor: pointer;
+}
+
+/* Scene */
+#scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Curtain */
+#curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 2;
+}
+
+.left, .right {
+    width: 50%;
+    height: 100%;
+    background-image: url("assets/img/curtain.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 2s ease-in-out;
+}
+
+.left {
+    transform-origin: center right;
+}
+
+.right {
+    transform-origin: center left;
+}
+
+/* Curtain Open Animation */
+#curtain.open .left {
+    transform: translateX(-100%) scale(0, 2);
+}
+
+#curtain.open .right {
+    transform: translateX(100%) scale(0, 2);
+}
+
+/* Scene Expansion */
+#scene.expand {
+    background-color: rgb(32, 32, 32);
+    transition: background-color 2s ease-in-out;
+}
+
+/* Fade Out Effect for Starter Text */
+#starter.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+</style>
+<body>
+
+    <div id="starter">Press Enter</div>
+
+    <div id="scene">
+        <div id="curtain">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                showTime();
+            }
+        });
+
+        function showTime() {
+            document.getElementById("curtain").classList.add("open"); 
+            document.getElementById("scene").classList.add("expand");
+            document.getElementById("starter").classList.add("fade-out");
+
+            setTimeout(function() {
+                document.getElementById("starter").style.display = 'none';
+            }, 1000);
+
+            // Redirect to homepage after animation
+            setTimeout(function() {
+                window.location.href = "new.html"; // Change to your actual homepage file
+            }, 2500);
+        }
+    </script>
+
+</body>
+</html>
