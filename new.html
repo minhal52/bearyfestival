@@ -18,25 +18,24 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background-color: rgb(32, 32, 32);
+    background: url('assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     text-align: center;
 }
-
 /* Hero Section */
 .hero {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* Full screen height */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
     color: white;
-    opacity: 0;
-    transform: scale(1.1);
-    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
     position: relative;
+    overflow: hidden;
+    padding: 0 20px;
 }
 
 /* Background Video */
@@ -50,46 +49,105 @@ body {
     z-index: -1;
 }
 
-/* Logo */
+/* Festival Logo (Moved Further Down) */
 .hero-logo {
-    width: 150px;
-    height: auto;
+    width: 18%;
+    max-width: 130px;
+    margin-top: 190px;
+    margin-bottom: 5px; /* Moved closer to title */
+    z-index: 2;
+}
+
+/* Festival Title Image (Centered) */
+.hero-title-image {
+    width: 45%;
+    max-width: 400px;
+    margin-top: -30px;
+    /* margin-bottom: 10px; Reduced gap */
+    z-index: 2;
+}
+
+/* Date Image (Moved Up Below Title) */
+.hero-date-image {
+    width: 35%;
+    max-width: 320px;
+    margin-top: -130px; /* Moved closer to title */
     margin-bottom: 10px;
+    z-index: 2;
 }
 
-/* Hero Title */
-.hero h1 {
-    font-size: 5vw;
-    font-weight: 800;
-    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
-    color: #ffcc00;
+/* Stickers (Positioned Left & Right) */
+.stickers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Stickers on left and right */
+    position: absolute;
+    bottom: 5%;
+    padding: 0 10%;
 }
 
-/* Removed Yellow Horizontal Line */
-.hero hr {
-    display: none;
+.sticker {
+    width: 12%;
+    max-width: 100px;
+    z-index: 2;
 }
 
-/* Hero Subtitle */
+/* Hero Text */
 .hero p {
-    font-size: 2vw;
+    font-size: 1.3vw;
     font-weight: 600;
     color: #fff;
+    z-index: 2;
+    margin-top: 5px;
 }
 
-/* Small Text Below Subtitle */
 .hero .small-text {
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-weight: 400;
     color: #ddd;
-    margin-top: 5px;
     font-style: italic;
+    margin-top: 3px;
+    z-index: 2;
 }
 
-/* Show Hero */
-.hero.show {
-    opacity: 1;
-    transform: scale(1);
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        padding: 0 10px;
+    }
+
+    .hero-logo {
+        width: 28%;
+        max-width: 110px;
+        margin-bottom: 15px; /* Adjusted */
+    }
+
+    .hero-title-image {
+        width: 65%;
+    }
+
+    .hero-date-image {
+        width: 55%;
+        margin-top: -3px; /* Adjusted */
+    }
+
+    .stickers {
+        padding: 0 5%;
+        bottom: 3%;
+    }
+
+    .sticker {
+        width: 18%;
+    }
+
+    .hero p {
+        font-size: 3vw;
+    }
+
+    .hero .small-text {
+        font-size: 2.5vw;
+    }
 }
 
 /* Festival Programmes Section */
@@ -305,28 +363,118 @@ body {
                 width: 90%;
             }
         }
+        General Styling for the Section */
+section {
+  background-color: teal;
+  color: white;
+  font-family: 'Comic Neue', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden; /* Prevent scrolling bar */
+}
+
+/* Styling for the container holding the text */
+section > .news {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+}
+
+/* Styling for each scrolling message */
+.news-message {
+  display: flex;
+  
+  flex-shrink: 0; /* Prevent shrinking */
+  height: 50px;
+  align-items: center;
+  animation: slide-left 20s linear infinite;
+}
+
+/* Styling for the paragraph text */
+.news-message p {
+  font-size: 2.5em;
+  font-weight: 100;
+  padding-left: 0.5em;
+}
+
+/* Animation for the scrolling effect */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
+  }
+}
+
+/* Mobile-specific Styles */
+@media only screen and (max-width: 768px) {
+  /* Reduce the font size for better readability on small screens */
+  .news-message p {
+    font-size: 1.5em; /* Decrease font size */
+  }
+
+  /* Make the container fit the screen width */
+  section > .news {
+    min-width: 100%;
+  }
+
+  /* Adjust the scrolling speed for mobile */
+  .news-message {
+    animation: slide-left 15s linear infinite; /* Faster scrolling for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Further reduce the font size for smaller screens */
+  .news-message p {
+    font-size: 1.2em; /* Even smaller font size for very small screens */
+  }
+
+  /* Adjust the scrolling speed even more for very small screens */
+  .news-message {
+    animation: slide-left 10s linear infinite; /* Even faster scrolling */
+  }
+}
 
 </style>
 <body>
+<!-- Hero Section -->
+<!-- Hero Section -->
+<div class="hero">
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <video autoplay loop muted playsinline class="bg-video">
-            <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- Festival Logo (Slightly Lower) -->
+    <img src="assets/img/kbflogo-removebg-preview.png" alt="Festival Logo" class="hero-logo">
+    
+    <!-- Festival Title Image (Centered) -->
+    <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="Festival Title" class="hero-title-image">
+    
+    <!-- Date Image Below Title -->
+    <img src="assets/img/datepng-removebg-preview.png" alt="Festival Date" class="hero-date-image">
+    
+    <!-- Stickers Below Date Image -->
+    <!-- <div class="stickers">
+        <img src="assets/img/clocktower-removebg-preview.png" alt="Clock Tower" class="sticker">
+        <img src="assets/img/boat-removebg-preview.png" alt="Boat" class="sticker">
+    </div> -->
 
-        <!-- Stickers -->
-        <img src="assets/img/clocktower-removebg-preview.png" alt="Clock Tower" class="sticker sticker-left">
-        <img src="assets/img/boat-removebg-preview (1).png" alt="Boat" class="sticker sticker-right">
-        
-        <!-- Festival Logo -->
-        <img src="assets/img/kbflogo-removebg-preview.png" alt="Festival Logo" class="hero-logo">
-        
-        <h1>Karnataka Beary Festival 2025</h1>
-        <p>Experience the culture, heritage, and joy of the Beary community</p>
-        <p class="small-text">By Mangalore.Story</p>
-    </div>
+    <p>Experience the culture, heritage, and joy of the Beary community</p>
+    <p class="small-text">By Mangalore.Story</p>
+</div>
+
+<!-- <div class="news">
+    <section class="scroll-section news-message">
+      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
+    </section>
+    <section class="news-message">
+      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
+    </section>
+  </div>
+   -->
 
       <!-- Festival Programmes Section -->
       <section class="festival-programmes">
@@ -414,7 +562,7 @@ body {
             <img src="assets/img/g3.jpg" alt="Gallery Image 6">
             <img src="assets/img/g5.jpg" alt="Gallery Image 6">
          
-            <!-- <img src="assets/img/g6.jpg" alt="Gallery Image 6"> -->
+            <img src="assets/img/g6.jpg" alt="Gallery Image 6">
             <!-- <img src="assets/img/g1.jpg" alt="Gallery Image 6">
             <img src="assets/img/g1.jpg" alt="Gallery Image 6">
             <img src="assets/img/g1.jpg" alt="Gallery Image 6"> -->
