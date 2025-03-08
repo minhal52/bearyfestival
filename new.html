@@ -210,6 +210,102 @@ body {
         bottom: -4%;
     }
 }
+
+
+
+.gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-heading{
+            font-size: 32px;
+            color: white;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+        }
+        .contact-section {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #040823;
+        }
+
+        .contact-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--first);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid var(--first);
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            background: var(--second);
+            color: var(--first);
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contact-form button:hover {
+            background: #d1a347;
+        }
+
+        /* Responsive for Mobile */
+        @media (max-width: 768px) {
+            .contact-section {
+                width: 90%;
+            }
+        }
+
 </style>
 <body>
 
@@ -310,7 +406,36 @@ body {
             </div>
         </div>
     </section>
+    <h2 class="gallery-heading">Gallery</h2>
+        <div class="gallery">
+            <img src="assets/img/g4.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g1.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g2.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g3.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g5.jpg" alt="Gallery Image 6">
+         
+            <!-- <img src="assets/img/g6.jpg" alt="Gallery Image 6"> -->
+            <!-- <img src="assets/img/g1.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g1.jpg" alt="Gallery Image 6">
+            <img src="assets/img/g1.jpg" alt="Gallery Image 6"> -->
 
+        </div>
+
+        <section class="contact-section">
+            <h2 style="text-align: center;">Connect Us</h2>
+            <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                <select id="category" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Book a Stall">Book a Stall</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                </select>
+                <textarea id="message" placeholder="Enter your message..." required></textarea>
+                <button type="submit">Inquire</button>
+            </form>
+        </section>
     <!-- JavaScript to Show Hero Section -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -318,6 +443,30 @@ body {
                 document.querySelector(".hero").classList.add("show");
             }, 500);
         });
+        function sendWhatsAppMessage(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get input values
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let category = document.getElementById("category").value;
+            let message = document.getElementById("message").value;
+
+            // WhatsApp number (without + sign)
+            let whatsappNumber = "9632781673";
+
+
+            // Properly formatted prefilled WhatsApp message
+            let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
+
+            // Encode the message for URL
+            let encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // Open WhatsApp link
+            let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        }
     </script>
 
 </body>
