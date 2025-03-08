@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 <style>
 /* Reset & Global Styles */
@@ -363,77 +365,82 @@ body {
                 width: 90%;
             }
         }
-        General Styling for the Section */
+/* General Styling for the Section */
 section {
   background-color: teal;
   color: white;
   font-family: 'Comic Neue', sans-serif;
   text-transform: uppercase;
   overflow: hidden; /* Prevent scrolling bar */
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Styling for the container holding the text */
-section > .news {
+.news {
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
   min-width: 100%;
+  gap: 30px; /* Adds spacing between duplicate messages */
 }
 
 /* Styling for each scrolling message */
 .news-message {
   display: flex;
-  
   flex-shrink: 0; /* Prevent shrinking */
   height: 50px;
   align-items: center;
-  animation: slide-left 20s linear infinite;
+  animation: slide-left 35s linear infinite; /* Adjusted speed for smooth effect */
 }
 
 /* Styling for the paragraph text */
 .news-message p {
-  font-size: 2.5em;
-  font-weight: 100;
-  padding-left: 0.5em;
+  font-size: 2.2em;
+  font-weight: 400;
+  padding-left: 1em;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Ensures text stays in a single line */
 }
 
 /* Animation for the scrolling effect */
 @keyframes slide-left {
   0% {
-    transform: translateX(0); /* Start position */
+    transform: translateX(0%); /* Start from right */
   }
   100% {
-    transform: translateX(-100%); /* End position */
+    transform: translateX(-100%); /* Move fully to left */
   }
 }
 
 /* Mobile-specific Styles */
 @media only screen and (max-width: 768px) {
-  /* Reduce the font size for better readability on small screens */
   .news-message p {
-    font-size: 1.5em; /* Decrease font size */
+    font-size: 1.8em; /* Slightly reduced font size */
   }
 
-  /* Make the container fit the screen width */
-  section > .news {
-    min-width: 100%;
+  .news {
+    gap: 20px; /* Adjusted spacing */
   }
 
-  /* Adjust the scrolling speed for mobile */
   .news-message {
-    animation: slide-left 15s linear infinite; /* Faster scrolling for smaller screens */
+    animation: slide-left 12s linear infinite; /* Slightly faster for mobile */
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* Further reduce the font size for smaller screens */
   .news-message p {
-    font-size: 1.2em; /* Even smaller font size for very small screens */
+    font-size: 1.4em; /* Smaller font for compact screens */
   }
 
-  /* Adjust the scrolling speed even more for very small screens */
+  .news {
+    gap: 15px; /* Reduce gap further */
+  }
+
   .news-message {
-    animation: slide-left 10s linear infinite; /* Even faster scrolling */
+    animation: slide-left 10s linear infinite; /* Faster scroll for smaller screens */
   }
 }
 
@@ -466,85 +473,16 @@ section > .news {
     <!-- <p class="small-text">By Mangalore.Story</p> -->
 </div>
  
-
-      <!-- Festival Programmes Section -->
-      <section class="festival-programmes">
-        <h2>Festival Highlights & Programs</h2>
-        <div class="programmes-container">
-            
-            <!-- Cultural & Talent -->
-            <div class="programme">
-                <i class="fas fa-theater-masks"></i>
-                <h3>Cultural Activities</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-microphone-alt"></i>
-                <h3>Talent Show</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Mehandi Competition</h3>
-            </div>
-
-            <!-- Awards & Recognition -->
-            <div class="programme">
-                <i class="fas fa-award"></i>
-                <h3>Achievers Recognition</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-trophy"></i>
-                <h3>Business Award</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-medal"></i>
-                <h3>Youth Motivation Award</h3>
-            </div>
-
-            <!-- Food & Fun -->
-            <div class="programme">
-                <i class="fas fa-utensils"></i>
-                <h3>Food Festival</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-cookie"></i>
-                <h3>Food Competition</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-glass-cheers"></i>
-                <h3>One Day Gawji Gammath</h3>
-            </div>
-
-            <!-- Sports & Games -->
-            <div class="programme">
-                <i class="fas fa-futbol"></i>
-                <h3>Cricket Match</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-child"></i>
-                <h3>Kids & Old Fun Games</h3>
-            </div>
-
-            <!-- Career & Business -->
-            <div class="programme">
-                <i class="fas fa-briefcase"></i>
-                <h3>Startup Platform</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-user-tie"></i>
-                <h3>Job Mela</h3>
-            </div>
-
-            <!-- Family & Social -->
-            <div class="programme">
-                <i class="fas fa-users"></i>
-                <h3>Family Gathering</h3>
-            </div>
-            <div class="programme">
-                <i class="fas fa-handshake"></i>
-                <h3>Social Award</h3>
-            </div>
-        </div>
+<div class="news">
+    <section class="scroll-section news-message">
+      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
     </section>
+    <section class="news-message">
+      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
+    </section>
+  </div>
+  
+   
     <h2 class="gallery-heading">Gallery</h2>
         <div class="gallery">
             <img src="assets/img/g4.jpg" alt="Gallery Image 6">
