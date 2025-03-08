@@ -33,7 +33,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 110%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+    background: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
     z-index: -1; /* Keeps it behind the content */
 }
 
@@ -455,6 +455,30 @@ section {
     animation: slide-left 10s linear infinite; /* Faster scroll for smaller screens */
   }
 }
+.festival-description {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay effect */
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.festival-description h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffd700; /* Gold color for a premium look */
+}
+
+.festival-description p {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
 
 </style>
 <body>
@@ -509,7 +533,8 @@ section {
             <img src="assets/img/g1.jpg" alt="Gallery Image 6"> -->
 
         </div>
-
+        
+        
         <div class="contact-section">
             <h2 style="text-align: center;">Connect Us</h2>
             <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
@@ -525,6 +550,13 @@ section {
                 <button type="submit">Inquire</button>
             </form>
         </div>
+
+        <div class="festival-description">
+            <p>
+                Join us for the <strong>Karnataka Beary Festival 2025</strong>, a vibrant three-day celebration of culture, talent, and community, held at <strong>Karavali Utsava Maidana Ballalbagh, Mangalore</strong> from <strong>April 18-20, 2025</strong>. This extravaganza promises an unforgettable experience, showcasing the best of Karnataka's Beary culture through cultural activities, achievers' recognition, food festival, talent show, job mela, kids' fun games, startup platform, cricket match, and family gathering. The festival will also feature competitions, including food and mehandi, and awards for outstanding contributions in various fields. Mark your calendars and get ready to experience the vibrant spirit of Karnataka's Beary community!
+            </p>
+        </div>
+        
     <!-- JavaScript to Show Hero Section -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
