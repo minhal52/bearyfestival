@@ -1,96 +1,101 @@
-(function () {
-    const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
 
-    // Event Start & End Dates (Fixed to 2025)
-    const eventStart = new Date("April 18, 2025 14:00:00").getTime(); // April 18, 2025, 2 PM
-    const eventEnd = new Date("April 20, 2025 23:59:59").getTime();   // April 20, 2025, 11:59 PM
 
-    const x = setInterval(function () {
-        const now = new Date().getTime(),
-            distanceToStart = eventStart - now,
-            distanceToEnd = eventEnd - now;
+    // // HERO SECTION LOAD
+    // workObserver.observe(workSection);
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     setTimeout(() => {
+    //         document.querySelector(".hero").classList.add("show");
+    //     }, 500);
+    // });
 
-        if (distanceToStart > 0) {
-            // Countdown before event starts
-            document.getElementById("days").innerText = Math.floor(distanceToStart / day);
-            document.getElementById("hours").innerText = Math.floor((distanceToStart % day) / hour);
-            document.getElementById("minutes").innerText = Math.floor((distanceToStart % hour) / minute);
-            document.getElementById("seconds").innerText = Math.floor((distanceToStart % minute) / second);
-        } else if (distanceToEnd > 0) {
-            // Event is live (April 18 - April 20)
-            document.getElementById("headline").innerText = "Beary Mela is Live!";
-            document.getElementById("countdown").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            document.getElementById("content").innerText = "Welcome to Beary Mela!";
-        } else {
-            // Event is over (After April 20)
-            document.getElementById("headline").innerText = "The Event Has Ended";
-            document.getElementById("content").style.display = "none";
-            clearInterval(x);
-        }
-    }, 1000);
-})();
-// Initialize ScrollReveal
-const sr = ScrollReveal({
-    reset: false, // Ensures it only animates once
-    distance: '60px', // Slightly increased for a smoother effect
-    duration: 1000,
-    delay: 200,
-    easing: 'ease-in-out'
+    // WHATSAPP MESSAGE
+    function sendWhatsAppMessage(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get input values
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let category = document.getElementById("category").value;
+        let message = document.getElementById("message").value;
+
+        // WhatsApp number (without + sign)
+        let whatsappNumber = "9632781673";
+
+
+        // Properly formatted prefilled WhatsApp message
+        let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
+
+        // Encode the message for URL
+        let encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // Open WhatsApp link
+        let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
+    }
+
+     document.addEventListener("DOMContentLoaded", function () {
+    const scrollWrapper = document.querySelector(".scroll-wrapper");
+    const scrollSection = document.querySelector(".scroll-section");
+
+    // Duplicate the content to create an infinite loop
+    const duplicateSection = scrollSection.cloneNode(true);
+    scrollWrapper.appendChild(duplicateSection);
 });
+function openSponsorForm() {
+    document.getElementById("sponsor-form").style.display = "block";
+}
 
-// Event Gallery Animations
-sr.reveal('.event-heading', { origin: 'top', delay: 200 });
-sr.reveal('.event-card', { origin: 'bottom', delay: 300, interval: 150 });
-// ==================================
-  
-  var preloader = document.getElementById('loader');
-  window.addEventListener("load", function(){
-    setTimeout(function() {
-      loader.style.display = 'none';
-    }, 3000); // 2000 milliseconds (2 seconds) delay
-  });
+function closeSponsorForm() {
+    document.getElementById("sponsor-form").style.display = "none";
+}
 
-    // counting number script
-    const workSection = document.querySelector(".section-work-data");
-    const workObserver = new IntersectionObserver(
-        (entries, observer) => {
-            const [entry] = entries;
+function sendWhatsApp() {
+    let name = document.getElementById("sponsor-name").value;
+    let phone = document.getElementById("sponsor-phone").value;
+    let email = document.getElementById("sponsor-email").value;
+    let message = document.getElementById("sponsor-message").value;
 
-            if (!entry.isIntersecting) return;
+    let whatsappMessage = `Hello, I am interested in sponsoring Karnataka Beary Festival 2025.%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Message: ${message}`;
 
-            const counterNums = document.querySelectorAll(".counter-numbers");
-            const speed = 200;
+    let whatsappURL = `https://wa.me/9632781673?text=${whatsappMessage}`;
+    window.open(whatsappURL, "_blank");
+}
 
-            counterNums.forEach((curElem) => {
-                const targetNumber = parseInt(curElem.dataset.number);
-                const updateNumber = () => {
-                    const initialNum = parseInt(curElem.innerText);
-                    const incrementNumber = Math.ceil(targetNumber / speed);
+// whatsap link
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollWrapper = document.querySelector(".scroll-wrapper");
+    const scrollSection = document.querySelector(".scroll-section");
 
-                    if (initialNum < targetNumber) {
-                        if (curElem.dataset.number === "2005") {
-                            curElem.innerText = Math.min(initialNum + incrementNumber, targetNumber);
-                        } else {
-                            curElem.innerText = `${initialNum + incrementNumber}+`;
-                        }
-                        if (initialNum + incrementNumber < targetNumber) {
-                            setTimeout(updateNumber, 10);
-                        }
-                    }
-                };
+    // Duplicate the content to create an infinite loop
+    const duplicateSection = scrollSection.cloneNode(true);
+    scrollWrapper.appendChild(duplicateSection);
+});
+function openSponsorForm() {
+    document.getElementById("sponsor-form").style.display = "block";
+}
 
-                updateNumber();
-            });
+function closeSponsorForm() {
+    document.getElementById("sponsor-form").style.display = "none";
+}
 
-            observer.unobserve(workSection);
-        }, {
-            root: null,
-            threshold: 0,
-        }
-    );
+function sendWhatsApp() {
+    let name = document.getElementById("sponsor-name").value;
+    let phone = document.getElementById("sponsor-phone").value;
+    let email = document.getElementById("sponsor-email").value;
+    let message = document.getElementById("sponsor-message").value;
 
-    workObserver.observe(workSection);
+    let whatsappMessage = `Hello, I am interested in sponsoring Karnataka Beary Festival 2025.%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+    let whatsappURL = `https://wa.me/9632781673?text=${whatsappMessage}`;
+    window.open(whatsappURL, "_blank");
+}
+

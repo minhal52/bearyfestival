@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karnataka Beary Festival 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-
-</head>
-<style>
 /* Reset & Global Styles */
 * {
     margin: 0;
@@ -19,7 +6,7 @@
 }
 body {
     font-family: 'Orbitron', sans-serif;
-    background: url('assets/img/background.jpg') no-repeat center center fixed;
+    background: url('/assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
@@ -32,7 +19,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
     z-index: -1; /* Keeps it behind the content */
 }
@@ -400,28 +387,62 @@ section {
   align-items: center;
   justify-content: center;
 }
-
-/* Styling for the container holding the text */
+/* General Styling for the Section */
 .news {
-  display: flex;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  min-width: 100%;
-  gap: 30px; /* Adds spacing between duplicate messages */
-}
-
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    background-color: teal;
+  }
+  
+  /* Scrolling Container */
+  .scroll-wrapper {
+    display: flex;
+    width: max-content; /* Prevent unnecessary stretching */
+    animation: slide-left 80s linear infinite; /* Adjust speed as needed */
+  }
+  
+  /* Duplicating Content for Seamless Loop */
+  .scroll-section {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between news items */
+    min-width: 100%; /* Ensure content spans full width */
+  }
+  
+  /* Styling for Each News Item */
+  .scroll-section p {
+    font-size: 32px;
+    font-weight: 400;
+    padding-left: 1em;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  
+  /* Keyframes for Infinite Scrolling */
+  @keyframes slide-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
 /* Styling for each scrolling message */
 .news-message {
   display: flex;
   flex-shrink: 0; /* Prevent shrinking */
-  height: 50px;
+  height: 40px;
   align-items: center;
-  animation: slide-left 35s linear infinite; /* Adjusted speed for smooth effect */
+  animation: slide-left 55s linear infinite; /* Adjusted speed for smooth effect */
 }
 
 /* Styling for the paragraph text */
 .news-message p {
-  font-size: 2.2em;
+  font-size:32px;
   font-weight: 400;
   padding-left: 1em;
   letter-spacing: 1px;
@@ -463,7 +484,7 @@ section {
   }
 
   .news-message {
-    animation: slide-left 10s linear infinite; /* Faster scroll for smaller screens */
+    animation: slide-left 60s linear infinite; /* Faster scroll for smaller screens */
   }
 }
 .festival-description {
@@ -489,117 +510,94 @@ section {
     margin-bottom: 15px;
     font-weight: 300;
 }
+.sponsor-cta {
+    text-align: center;
+    /* background-color: #3a0404; */
+    background-color: #043334;
 
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-</style>
-<body>
-<!-- Hero Section -->
-<!-- Hero Section -->
-<div class="hero">
-    <video autoplay loop muted playsinline class="bg-video">
-        <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+.sponsor-cta h2 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-    <!-- Festival Logo (Slightly Lower) -->
-    <img src="assets/img/kbflogo-removebg-preview.png" alt="Festival Logo" class="hero-logo">
-    
-    <!-- Festival Title Image (Centered) -->
-    <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="Festival Title" class="hero-title-image">
-    
-    <!-- Date Image Below Title -->
-    <img src="assets/img/datepng-removebg-preview.png" alt="Festival Date" class="hero-date-image">
-<!--     
-    Stickers Below Date Image --> 
-     <div class="stickers">
-        <!-- <img src="assets/img/clocktower-removebg-preview (1).png" alt="Clock Tower" class="sticker-left"> -->
-        <!-- <img src="assets/img/boat-removebg-preview (3).png" alt="Boat" class="sticker-right"> -->
-    </div>
+.sponsor-cta p {
+    font-size: 18px;
+    color: #f9f9f9;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
 
-     <!-- <p>Experience the culture, heritage, and joy of the Beary community</p>  -->
-    <!-- <p class="small-text">By Mangalore.Story</p> -->
-</div>
- 
-<div class="news">
-    <section class="scroll-section news-message">
-      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
-    </section>
-    <!-- <section class="news-message">
-      <p>Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award</p>
-    </section> -->
-  </div>
-  
-   
-    <h2 class="gallery-heading">Gallery</h2>
-        <div class="gallery">
-            <img src="assets/img/g4.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g1.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g2.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g3.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g5.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g7.jpg" alt="Gallery Image 6">
-            <img src="assets/img/g8.jpg" alt="Gallery Image 6"> 
+.sponsor-btn {
+    display: inline-block;
+    background-color:#3a0404;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
 
-            <img src="assets/img/g6.jpg" alt="Gallery Image 6">
-        
-           
-        </div>
-        
-        
-        <div class="contact-section">
-            <h2 style="text-align: center;">Connect Us</h2>
-            <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" placeholder="Your Phone Number" required>
-                <select id="category" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Book a Stall">Book a Stall</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                </select>
-                <textarea id="message" placeholder="Enter your message..." required></textarea>
-                <button type="submit">Inquire</button>
-            </form>
-        </div>
+.sponsor-btn:hover {
+    background-color: #b71c1c;
+}
 
-        <div class="festival-description">
-            <p>
-                Join us for the <strong>Karnataka Beary Festival 2025</strong>, a vibrant three-day celebration of culture, talent, and community, held at <strong>Karavali Utsava Maidana Ballalbagh, Mangalore</strong> from <strong>April 18-20, 2025</strong>. This extravaganza promises an unforgettable experience, showcasing the best of Karnataka's Beary culture through cultural activities, achievers' recognition, food festival, talent show, job mela, kids' fun games, startup platform, cricket match, and family gathering. The festival will also feature competitions, including food and mehandi, and awards for outstanding contributions in various fields. Mark your calendars and get ready to experience the vibrant spirit of Karnataka's Beary community!
-            </p>
-        </div>
-        
-    <!-- JavaScript to Show Hero Section -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(() => {
-                document.querySelector(".hero").classList.add("show");
-            }, 500);
-        });
-        function sendWhatsAppMessage(event) {
-            event.preventDefault(); // Prevent form submission
-            
-            // Get input values
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let category = document.getElementById("category").value;
-            let message = document.getElementById("message").value;
+/* Hidden Form */
+.sponsor-form {
+    display: none;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
 
-            // WhatsApp number (without + sign)
-            let whatsappNumber = "9632781673";
+.sponsor-form h3 {
+    margin-bottom: 10px;
+}
 
+.sponsor-form input,
+.sponsor-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-            // Properly formatted prefilled WhatsApp message
-            let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
+.sponsor-form button {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-            // Encode the message for URL
-            let encodedMessage = encodeURIComponent(whatsappMessage);
+.sponsor-form button:hover {
+    background: #1EBE5D;
+}
 
-            // Open WhatsApp link
-            let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-            window.open(whatsappURL, "_blank");
-        }
-    </script>
+.close-btn {
+    background: #d32f2f !important;
+}
 
-</body>
-</html>
+.close-btn:hover {
+    background: #b71c1c !important;
+}
