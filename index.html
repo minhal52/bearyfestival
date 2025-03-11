@@ -3,100 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karnataka Beary Festival 2025 </title>
+    <title>Karnataka Beary Festival 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Scene */
+        #scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Starter Text */
+        #starter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            z-index: 3; /* Ensure it's above the curtain */
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Curtain */
+        #curtain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            z-index: 2;
+        }
+
+        .left, .right {
+            width: 50%;
+            height: 100%;
+            background-image: url("assets/img/curtain.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 2s ease-in-out;
+        }
+
+        .left {
+            transform-origin: center right;
+        }
+
+        .right {
+            transform-origin: center left;
+        }
+
+        /* Curtain Open Animation */
+        #curtain.open .left {
+            transform: translateX(-100%) scale(0, 2);
+        }
+
+        #curtain.open .right {
+            transform: translateX(100%) scale(0, 2);
+        }
+
+        /* Scene Expansion */
+        #scene.expand {
+            background-color: rgb(32, 32, 32);
+            transition: background-color 2s ease-in-out;
+        }
+
+        /* Fade Out Effect for Starter Text */
+        #starter.fade-out {
+            opacity: 0;
+        }
+    </style>
 </head>
-<style>
-    /* Reset & Global Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-   
-    
-
-    /* Starter Text */
-    #starter {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        color: #ffcc00;
-        cursor: pointer;
-    }
-
-    /* Scene */
-    #scene {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Curtain */
-    #curtain {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        z-index: 2;
-    }
-
-    .left, .right {
-        width: 50%;
-        height: 100%;
-        background-image: url("assets/img/curtain.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: transform 2s ease-in-out;
-    }
-
-    .left {
-        transform-origin: center right;
-    }
-
-    .right {
-        transform-origin: center left;
-    }
-
-    /* Curtain Open Animation */
-    #curtain.open .left {
-        transform: translateX(-100%) scale(0, 2);
-    }
-
-    #curtain.open .right {
-        transform: translateX(100%) scale(0, 2);
-    }
-
-    /* Scene Expansion */
-    #scene.expand {
-        background-color: rgb(32, 32, 32);
-        transition: background-color 2s ease-in-out;
-    }
-
-    /* Fade Out Effect for Starter Text */
-    #starter.fade-out {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-</style>
 <body>
 
-    <div id="starter">Press Enter or Tap</div>
-
     <div id="scene">
+        <div id="starter">Press Enter or Tap</div> <!-- Centered starter text inside scene -->
         <div id="curtain">
             <div class="left"></div>
             <div class="right"></div>
@@ -104,37 +101,39 @@
     </div>
 
     <script>
-        let hasOpened = false; // Prevent multiple triggers
+        document.addEventListener("DOMContentLoaded", function() {
+            let hasOpened = false; // Prevent multiple triggers
 
-        function showTime() {
-            if (hasOpened) return; // Prevent double execution
-            hasOpened = true;
+            function showTime() {
+                if (hasOpened) return; // Prevent double execution
+                hasOpened = true;
 
-            document.getElementById("curtain").classList.add("open"); 
-            document.getElementById("scene").classList.add("expand");
-            document.getElementById("starter").classList.add("fade-out");
+                document.getElementById("curtain").classList.add("open"); 
+                document.getElementById("scene").classList.add("expand");
+                document.getElementById("starter").classList.add("fade-out");
 
-            setTimeout(function() {
-                document.getElementById("starter").style.display = 'none';
-            }, 1000);
+                setTimeout(function() {
+                    document.getElementById("starter").style.display = 'none';
+                }, 1000);
 
-            // Redirect to homepage after animation
-            setTimeout(function() {
-                window.location.href = "main.html"; // Change to your actual homepage file
-            }, 2500);
-        }
-
-        // Listen for Enter key on large screens
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Enter") {
-                showTime();
+                // Redirect to homepage after animation
+                setTimeout(function() {
+                    window.location.href = "main.html"; // Change to your actual homepage file
+                }, 2500);
             }
-        });
 
-        // Listen for touch anywhere on the screen
-        document.addEventListener('touchstart', function() {
-            showTime();
-        }, { once: true }); // Ensures it only triggers once
+            // Listen for Enter key on large screens
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Enter") {
+                    showTime();
+                }
+            });
+
+            // Listen for touch anywhere on the screen
+            document.addEventListener('touchstart', function() {
+                showTime();
+            }, { once: true }); // Ensures it only triggers once
+        });
     </script>
 
 </body>

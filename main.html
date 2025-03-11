@@ -9,7 +9,103 @@
   
 </head>
 <style>
+
+
+/* Heading Style */
+.guests-heading {
+  background-color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Guests Section */
+.guests-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Guests Grid */
+.guests-container {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
   
+  /* Default: 1 column (mobile view) */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Small screens (≥576px) - 2 guests per row */
+@media (min-width: 576px) {
+  .guests-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium screens (≥768px) - 3 guests per row */
+@media (min-width: 768px) {
+  .guests-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large screens (≥1024px) - 4 guests per row */
+@media (min-width: 1024px) {
+  .guests-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Guest Card */
+.guest-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.guest-card:hover {
+  transform: scale(1.05);
+}
+
+/* Guest Image */
+.guest-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 75%;
+}
+
+/* Guest Name */
+.guest-name {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 15px 0 5px;
+  color: black;
+  display: block;
+}
+
+/* Guest Role */
+.guest-role {
+  font-size: 14px;
+  color: #777;
+  text-transform: none;
+}
+
+/* Fixing hidden text issues */
+.guest-name, .guest-role {
+  display: block !important;
+  visibility: visible;
+  white-space: normal;
+}
+
+
 </style>
 <body>
 <!-- Hero Section -->
@@ -48,6 +144,8 @@
             
         </div>
     </div>
+</div>
+
 </div>
 
    

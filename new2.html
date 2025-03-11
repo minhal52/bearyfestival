@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beary Mela - Program Highlights</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Section Heading */
+        .program-heading {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin: 40px 0;
+        }
+
+        /* Program Section */
+        .program-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Individual Program */
+        .program {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Alternate layout */
+        .program.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Program Image */
+        .program-image {
+            width: 50%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Program Content */
+        .program-content {
+            width: 50%;
+            text-align: left;
+        }
+
+        .program-content h3 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .program-content p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .program {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .program.reverse {
+                flex-direction: column;
+            }
+
+            .program-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .program-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="program-heading">Program Highlights</h2>
+
+    <section class="program-section">
+
+        <!-- Program 1: Image Left, Content Right -->
+        <div class="program">
+            <img src="assets/img/mehendi.jpg" alt="Mehendi Competition" class="program-image">
+            <div class="program-content">
+                <h3>Mehendi Competition</h3>
+                <p>Showcase your creativity with intricate Mehendi designs in this exciting competition!</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Image Right, Content Left -->
+        <div class="program reverse">
+            <div class="program-content">
+                <h3>Cultural Activities</h3>
+                <p>Experience the rich traditions and performances showcasing our diverse culture.</p>
+            </div>
+            <img src="assets/img/cultural.jpg" alt="Cultural Activities" class="program-image">
+        </div>
+
+        <!-- Program 3: Image Left, Content Right -->
+        <div class="program">
+            <img src="assets/img/kids-games.jpg" alt="Kids Games" class="program-image">
+            <div class="program-content">
+                <h3>Kids Games</h3>
+                <p>Fun and exciting games for kids of all ages with exciting prizes to win!</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Image Right, Content Left -->
+        <div class="program reverse">
+            <div class="program-content">
+                <h3>Food Festival</h3>
+                <p>Enjoy a variety of delicious traditional and modern dishes from different cuisines.</p>
+            </div>
+            <img src="assets/img/food.jpg" alt="Food Festival" class="program-image">
+        </div>
+
+        <!-- Program 5: Image Left, Content Right -->
+        <div class="program">
+            <img src="assets/img/talent-show.jpg" alt="Talent Show" class="program-image">
+            <div class="program-content">
+                <h3>Talent Show</h3>
+                <p>Watch or participate in an amazing talent show featuring music, dance, and more!</p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
+<div>
+    <h2 class="guests-heading">Chief Guests</h2>
+    <section class="guests-section">
+       
+        
+        <div class="guests-container">
+            <!-- Repeat this block for each guest -->
+            <div class="guest-card">
+                <img src="assets/img/dr krishna.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Dr. Krishna Chavan</h3>
+                <p class="guest-role"> Chief Architect & Landscape
+                    Designer</p>
+            </div>
+    
+            <div class="guest-card">
+                <img src="assets/img/ak kukkila.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> AK Kukkil</h3>
+                <p class="guest-role"> Editor sanmarga news</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/anwar sadat.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  Anwar sadat
+                    bajathoor</h3>
+                <p class="guest-role">  President, SDPI mangalore rular</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/bm farooq.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  BM Farooq</h3>
+                <p class="guest-role">  former MLC, MD Fiza group</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/ga bava.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> G.A Bava</h3>
+                <p class="guest-role"> Retired police officer
+                    bangalore</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/haji k aboobacker.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">Haji K Aboobakker
+                    Parkal</h3>
+                <p class="guest-role">  Lifetime Honerable President 
+                    consumer forum Devi Nagar Parkala
+                     Udupi</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/haneef golthamjajal.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Haneef golthamajal</h3>
+                <p class="guest-role">President hidaya foundation</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/ut ifthikar ali.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  UT Ifthikar Al</h3>
+                <p class="guest-role">  chairman of state allied and
+                    health care counci</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/inayath ali.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Inayath Ali</h3>
+                <p class="guest-role"> Genaral Secretary, KPCC</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/inayathulla shabandar.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> 
+                    Inayatulla shabandar</h3>
+                <p class="guest-role">  Tanzeem President Bhatkal</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/irshad darimi.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  Irshad Darimi</h3>
+                <p class="guest-role"> Chairman of Kanachur Hospital &
+                    Medical Collage, Deralakatt</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/jabbar maripala.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">Jabbar Maripala</h3>
+                <p class="guest-role">  Resque charitable foundar and
+                    social worker</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/haji k aboobacker.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Dr. Haji U.K. Monu</h3>
+                <p class="guest-role">  Chairman of Kanachur Hospital &
+                    Medical Collage, Deralakatte</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/ba moidin bawa.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">Mohiuddin Bava</h3>
+                <p class="guest-role">  former MLA mangalore north</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/nasir luckystar.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Nhasir lucky star</h3>
+                <p class="guest-role"> Chairman Dakshina kannada
+                    district waqf advisory committee</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/p ibrahim.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  P. Ibrahim Golikatte</h3>
+                <p class="guest-role">  Volleyball Association member
+                    of Karnataka.</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/rafiqdurbar.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  Rafiq Durbar
+                    Sakalshpura</h3>
+                <p class="guest-role">  Film Producer, Beary Business man,
+                    Social Activist, Journalist,</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/rahim uchil.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Rahim Uchil</h3>
+                <p class="guest-role"> ex president. Karnataka Beary Sahitya
+                    Academy (Govt Of Karnataka)</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/shafi sa adi.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Shafi Sa-ad</h3>
+                <p class="guest-role"> Ex president
+                    Waqf board karnataka</p>
+            </div>
+            <div class="guest-card">
+                <img src="assets/img/shareef abbas.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> Shareef abbas
+                    valal</h3>
+                <p class="guest-role"> Coastal friends mangalore
+                    (president and Social activist)</p>
+            </div>  
+            <div class="guest-card">
+                <img src="assets/img/tm shahid.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name"> 
+                    T.M Shahid Thekkil</h3>
+                <p class="guest-role">  KPCC Genaral Secretary,
+                    Foundar President Thekkil Fiundation</p>
+            </div>
+              <div class="guest-card">
+                <img src="assets/img/umer uh.jpg" alt="Guest Name" class="guest-image">
+                <h3 class="guest-name">  Umar UH</h3>
+                <p class="guest-role">  Chairperson, beary sahitya
+                    academy karnataka govt</p>
+            </div>
+     <div class="guest-card">
+          <img src="assets/img/farzana.jpg" alt="Guest Name" class="guest-image">
+            <h3 class="guest-name">   U T Farzana</h3>
+            <p class="guest-role"> Spokes person, KPCC</p>
+        </div> 
+     <div class="guest-card">
+            <img src="assets/img/ut khader.jpg" alt="Guest Name" class="guest-image">
+            <h3 class="guest-name">   UT Khade</h3>
+            <p class="guest-role">   Hon. speaker of the
+                karnataka legislative assembly</p>
+        </div> 
+     </div>  
+            <!-- Repeat similar blocks for all 24 guests -->
+        </div>
+    </section>

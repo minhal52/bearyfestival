@@ -1,13 +1,22 @@
 
 
-    // // HERO SECTION LOAD
-    // workObserver.observe(workSection);
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     setTimeout(() => {
-    //         document.querySelector(".hero").classList.add("show");
-    //     }, 500);
-    // });
+    // HERO SECTION LOAD
+    workObserver.observe(workSection);
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            document.querySelector(".hero").classList.add("show");
+        }, 500);
+    });
 
+
+    document.addEventListener("wheel", function(event) {
+        event.preventDefault();
+        window.scrollBy({
+            top: event.deltaY * 1, 
+            behavior: "smooth"
+        });
+    }, { passive: false });
+    
     // WHATSAPP MESSAGE
     function sendWhatsAppMessage(event) {
         event.preventDefault(); // Prevent form submission
