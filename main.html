@@ -11,101 +11,6 @@
 <style>
 
 
-/* Heading Style */
-.guests-heading {
-  background-color: white;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-}
-
-/* Guests Section */
-.guests-section {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-/* Guests Grid */
-.guests-container {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  
-  /* Default: 1 column (mobile view) */
-  grid-template-columns: repeat(1, 1fr);
-}
-
-/* Small screens (≥576px) - 2 guests per row */
-@media (min-width: 576px) {
-  .guests-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Medium screens (≥768px) - 3 guests per row */
-@media (min-width: 768px) {
-  .guests-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Large screens (≥1024px) - 4 guests per row */
-@media (min-width: 1024px) {
-  .guests-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Guest Card */
-.guest-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 250px;
-}
-
-.guest-card:hover {
-  transform: scale(1.05);
-}
-
-/* Guest Image */
-.guest-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 75%;
-}
-
-/* Guest Name */
-.guest-name {
-  font-size: 1em;
-  font-weight: bold;
-  margin: 15px 0 5px;
-  color: black;
-  display: block;
-}
-
-/* Guest Role */
-.guest-role {
-  font-size: 14px;
-  color: #777;
-  text-transform: none;
-}
-
-/* Fixing hidden text issues */
-.guest-name, .guest-role {
-  display: block !important;
-  visibility: visible;
-  white-space: normal;
-}
-
-
 </style>
 <body>
 <!-- Hero Section -->
@@ -145,7 +50,170 @@
         </div>
     </div>
 </div>
+<!-- Founder Section -->
+<div class="founder-section">
+  <h2 class="founder-heading">Meet the Founder</h2>
+  <div class="founder-container">
+      <img src="assets/img/founder-removebg-preview.png" alt="Founder" class="founder-image">
+      <p class="founder-name">Iqbal Parliya</p>
+      <p class="founder-role">Founder of Karnataka Beary Festival</p>
+  </div>
+</div>
+<h2 class="guests-heading">Chief Guests</h2>
+  
+  <section class="guests-section">
 
+      
+      <div class="guests-container">
+          <!-- Repeat this block for each guest -->
+          <div class="guest-card">
+              <img src="assets/img/1-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Dr. Krishna Chavan</h3>
+              <p class="guest-role"> Chief Architect & Landscape
+                  Designer</p>
+          </div>
+  
+          <div class="guest-card">
+              <img src="assets/img/2-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> AK Kukkil</h3>
+              <p class="guest-role"> Editor sanmarga news</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/3-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  Anwar sadat
+                  bajathoor</h3>
+              <p class="guest-role">  President, SDPI mangalore rular</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/4-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  BM Farooq</h3>
+              <p class="guest-role">  former MLC, MD Fiza group</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/5-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> G.A Bava</h3>
+              <p class="guest-role"> Retired police officer
+                  bangalore</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/6-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">Haji K Aboobakker
+                  Parkal</h3>
+              <p class="guest-role">  Lifetime Honerable President 
+                  consumer forum Devi Nagar Parkala
+                   Udupi</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/7-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Haneef golthamajal</h3>
+              <p class="guest-role">President hidaya foundation</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/8-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  UT Ifthikar Al</h3>
+              <p class="guest-role">  chairman of state allied and
+                  health care counci</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/9-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Inayath Ali</h3>
+              <p class="guest-role"> Genaral Secretary, KPCC</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/10-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> 
+                  Inayatulla shabandar</h3>
+              <p class="guest-role">  Tanzeem President Bhatkal</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/11-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  Irshad Darimi</h3>
+              <p class="guest-role"> Chairman of Kanachur Hospital &
+                  Medical Collage, Deralakatt</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/12-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">Jabbar Maripala</h3>
+              <p class="guest-role">  Resque charitable foundar and
+                  social worker</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/13-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Dr. Haji U.K. Monu</h3>
+              <p class="guest-role">  Chairman of Kanachur Hospital &
+                  Medical Collage, Deralakatte</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/14-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">Mohiuddin Bava</h3>
+              <p class="guest-role">  former MLA mangalore north</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/15-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Nhasir lucky star</h3>
+              <p class="guest-role"> Chairman Dakshina kannada
+                  district waqf advisory committee</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/16-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  P. Ibrahim Golikatte</h3>
+              <p class="guest-role">  Volleyball Association member
+                  of Karnataka.</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/17-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  Rafiq Durbar
+                  Sakalshpura</h3>
+              <p class="guest-role">  Film Producer, Beary Business man,
+                  Social Activist, Journalist,</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/18-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Rahim Uchil</h3>
+              <p class="guest-role"> ex president. Karnataka Beary Sahitya
+                  Academy (Govt Of Karnataka)</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/19-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Shafi Sa-ad</h3>
+              <p class="guest-role"> Ex president
+                  Waqf board karnataka</p>
+          </div>
+          <div class="guest-card">
+              <img src="assets/img/20-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> Shareef abbas
+                  valal</h3>
+              <p class="guest-role"> Coastal friends mangalore
+                  (president and Social activist)</p>
+          </div>  
+          <div class="guest-card">
+              <img src="assets/img/21-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name"> 
+                  T.M Shahid Thekkil</h3>
+              <p class="guest-role">  KPCC Genaral Secretary,
+                  Foundar President Thekkil Fiundation</p>
+          </div>
+            <div class="guest-card">
+              <img src="assets/img/22-removebg-preview.png" alt="Guest Name" class="guest-image">
+              <h3 class="guest-name">  Umar UH</h3>
+              <p class="guest-role">  Chairperson, beary sahitya
+                  academy karnataka govt</p>
+          </div>
+   <div class="guest-card">
+        <img src="assets/img/23-removebg-preview.png" alt="Guest Name" class="guest-image">
+          <h3 class="guest-name">   U T Farzana</h3>
+          <p class="guest-role"> Spokes person, KPCC</p>
+      </div> 
+   <div class="guest-card">
+          <img src="assets/img/24-removebg-preview.png" alt="Guest Name" class="guest-image">
+          <h3 class="guest-name">   UT Khader</h3>
+          <p class="guest-role">   Hon. speaker of the
+              karnataka legislative assembly</p>
+      </div> 
+   </div>  
+          <!-- Repeat similar blocks for all 24 guests -->
+
+  </section>
 </div>
 
    

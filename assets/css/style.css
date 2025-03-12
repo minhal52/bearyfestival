@@ -381,9 +381,9 @@ body::before {
         }
 /* General Styling for the Section */
 section {
-  background-color: teal;
+  /* background-color: teal; */
   color: white;
-  font-family: 'Comic Neue', sans-serif;
+  /* font-family: 'Comic Neue', sans-serif; */
   text-transform: uppercase;
   overflow: hidden; /* Prevent scrolling bar */
   padding: 10px 0;
@@ -634,4 +634,152 @@ section {
 
 .close-btn:hover {
     background: #b71c1c !important;
+}
+
+/* Heading Style */
+.guests-heading {
+    /* background-color: #f9f9f9; */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+
+    text-align: center;
+    top: 10px;
+  }
+  
+  /* Guests Section */
+  .guests-section {
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+  }
+  
+  /* Guests Grid */
+  .guests-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    
+    
+    /* Default: 1 column (mobile view) */
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  /* Small screens (≥576px) - 2 guests per row */
+  @media (min-width: 576px) {
+    .guests-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Medium screens (≥768px) - 3 guests per row */
+  @media (min-width: 768px) {
+    .guests-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Large screens (≥1024px) - 4 guests per row */
+  @media (min-width: 1024px) {
+    .guests-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Guest Card */
+  .guest-card {
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    border: 3px solid teal;
+
+  }
+  
+  .guest-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Guest Image */
+  .guest-image {
+    width:150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* background-color: teal; */
+    
+  }
+  
+  /* Guest Name */
+  .guest-name {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    /* color: #3a0404; */
+    color: white;
+    display: block;
+  }
+  
+  /* Guest Role */
+  .guest-role {
+    font-size: 14px;
+    color: white;
+
+    text-transform: none;
+  }
+  
+  /* Fixing hidden text issues */
+  .guest-name, .guest-role {
+    display: block !important;
+    visibility: visible;
+    white-space: normal;
+  }
+  
+
+  
+/* Founder Section */
+.founder-section {
+    text-align: center;
+    padding: 40px 20px;
+    /* background-color: #f9f9f9; */
+}
+
+.founder-heading {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.founder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.founder-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid teal;
+}
+
+.founder-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.founder-role {
+    font-size: 1em;
+    color: white;
+
 }
